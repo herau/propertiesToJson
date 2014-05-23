@@ -1,5 +1,6 @@
 import org.codehaus.jackson.JsonFactory;
 import org.codehaus.jackson.JsonGenerator;
+import org.codehaus.jackson.PrettyPrinter;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -19,7 +20,7 @@ public class PropertiesToJsonFileVisitor extends SimpleFileVisitor<Path> {
         Properties properties = new Properties();
         properties.load(Files.newInputStream(file));
         // create new file
-        Path newFile = file.getParent().resolve(file.getFileName().toString().split("\\.")[0]);
+        Path newFile = file.getParent().resolve(file.getFileName().toString().split("\\.")[0] + ".json");
         OutputStream newFileOutputStream = Files.newOutputStream(newFile);
         // iterate and convert to JSON
         JsonFactory f = new JsonFactory();
