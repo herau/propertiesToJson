@@ -1,6 +1,5 @@
 import org.codehaus.jackson.JsonFactory;
 import org.codehaus.jackson.JsonGenerator;
-import org.codehaus.jackson.PrettyPrinter;
 
 import java.io.IOException;
 import java.io.OutputStream;
