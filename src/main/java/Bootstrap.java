@@ -12,7 +12,8 @@ public class Bootstrap {
         }
 
         Path startingDir = Paths.get(args[0]);
-        FileVisitor toJsonFileVisitor = new PropertiesToJsonFileVisitor();
+        FileVisitor<Path> toJsonFileVisitor = new PropertiesToJsonFileVisitor();
+
         try {
             Files.walkFileTree(startingDir, toJsonFileVisitor);
         } catch (IOException e) {

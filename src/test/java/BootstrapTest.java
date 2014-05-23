@@ -1,8 +1,10 @@
+import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Properties;
 
@@ -45,4 +47,5 @@ public class BootstrapTest {
 
         FilesManager.delete(tempDir);
     }
+
 }
