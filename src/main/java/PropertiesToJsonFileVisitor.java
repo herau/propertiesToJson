@@ -13,6 +13,10 @@ public class PropertiesToJsonFileVisitor extends SimpleFileVisitor<Path> {
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+        if (Files.isDirectory(file)) {
+            return FileVisitResult.CONTINUE;
+        }
+
         // load properties file
         Properties properties = new Properties();
         properties.load(Files.newInputStream(file));
