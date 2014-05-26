@@ -26,13 +26,10 @@ public class PropertiesToJsonFileVisitor extends SimpleFileVisitor<Path> {
             System.err.println(file + "isn't a properties file");
         }
 
-        Path newFile = file.getParent()
-                .resolve(nameAndExtension[0] + ".json");
+        Path newFile = file.getParent().resolve(nameAndExtension[0] + ".json");
         OutputStream newFileOutputStream = Files.newOutputStream(newFile);
         // convert to JSON
-        new ObjectMapper()
-                .writerWithDefaultPrettyPrinter()
-                .writeValue(newFileOutputStream, properties);
+        new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(newFileOutputStream, properties);
 
         return FileVisitResult.CONTINUE;
     }
