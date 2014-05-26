@@ -30,7 +30,6 @@ public class FilesManager {
                 Files.delete(dir);
                 return FileVisitResult.CONTINUE;
             }
-
         });
     }
 }
